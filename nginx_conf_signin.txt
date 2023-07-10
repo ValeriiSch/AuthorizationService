@@ -1,0 +1,14 @@
+    #location / {
+        #    root   html;
+        #    index  index.html index.htm;
+        #}
+
+	location /signin {
+	    root   html;
+            #index  signin_form.html;
+	    index /signin/signin_form.html;
+        }
+
+        location / {
+            proxy_pass http://localhost:8080/authorize?user=Elena&password=666;
+        }
